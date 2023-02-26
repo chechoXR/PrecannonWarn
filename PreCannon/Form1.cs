@@ -71,10 +71,10 @@ namespace PreCannon
             this.PrecannonAdviser.Enabled = false;
             this.PrecannonAdviser.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PrecannonAdviser.Location = new System.Drawing.Point(-1, 9);
-            this.PrecannonAdviser.Name = "PrecannonAdviser";
+            this.PrecannonAdviser.Name = "PrecannonWarn";
             this.PrecannonAdviser.Size = new System.Drawing.Size(350, 54);
             this.PrecannonAdviser.TabIndex = 2;
-            this.PrecannonAdviser.Text = "Precannon Adviser";
+            this.PrecannonAdviser.Text = "Precannon Warn";
             this.PrecannonAdviser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.PrecannonAdviser.UseCompatibleTextRendering = true;
             // 
@@ -123,7 +123,7 @@ namespace PreCannon
 
                 HttpClient client = new HttpClient(handler);
                 this.sync.Enabled = false;                      
-                this.Time.Text = "Buscando información...";
+                this.Time.Text = "Buscando informaciÃ³n...";
                 HttpResponseMessage request = await client.GetAsync("https://127.0.0.1:2999/liveclientdata/gamestats");
 
                 HttpResponseMessage response = request;
@@ -133,7 +133,7 @@ namespace PreCannon
                
                 this.sync.Enabled = true;
                 
-                //Relación timestamp vs tiempo de partida
+                //Relaciï¿½n timestamp vs tiempo de partida
                 DateTime timestamp = DateTime.Now;
               
 
