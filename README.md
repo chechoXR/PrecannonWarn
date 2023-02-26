@@ -1,7 +1,7 @@
 # PrecannonWarn
 This is a simple tool to warn about a precannon wave is arriving to line on League Of Legends.
 
-(Warn: this tool has been tested only in training tool)
+(Warn: this tool has been tested only in training/practice tool)
 
 ## Features  
 - Warn to the player the precannon wave is arriving to line.
