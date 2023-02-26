@@ -28,7 +28,7 @@ This is a simple tool to warn about a precannon wave is arriving to line on Leag
 
  
 ## A look to the app  
-![App Screenshot](https://github.com/chechoXR/PrecannonWarn/tree/main/PreCannon/Assets/img/demo/demo.png)  
+![](https://github.com/chechoXR/PrecannonWarn/blob/main/PreCannon/Assets/img/demo/demo.png)  
 
  
 ## Badges  
