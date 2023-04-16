@@ -26,3 +26,12 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
+- task: GitHubRelease@1
+  inputs:
+    gitHubConnection: 'ReleasiServiceConnection_chechoXR'
+    repositoryName: 'chechoXR/PrecannonWarn'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'gitTag'
+    changeLogCompareToRelease: 'lastFullRelease'
+    changeLogType: 'commitBased'
