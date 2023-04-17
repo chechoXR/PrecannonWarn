@@ -2,10 +2,13 @@
 trigger:
 - main
 
+name: $(major).$(minor).$(Rev:r)
+
 variables:
   - group: CI_Var
+  - name: Version
+    value: $(Build.BuildNumber)
 
-name: $(major).$(minor).$(Rev:r)
 
 pool:
   vmImage: windows-latest
@@ -47,8 +50,8 @@ steps:
     gitHubConnection: 'ReleasiServiceConnection_chechoXR'
     repositoryName: 'chechoXR/PrecannonWarn'
     action: 'create'
-    target: '$(Build.BuildNumber)'
+    target: $(Build.BuildNumber)
     tagSource: 'userSpecifiedTag'
-    tag: '$(Build.BuildNumber)'
+    tag: $(Build.BuildNumber)
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
