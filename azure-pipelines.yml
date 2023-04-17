@@ -18,6 +18,7 @@ steps:
   persistCredentials: true
 
 - task: DotNetCoreCLI@2
+  displayName: Restore app dependencies
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
@@ -25,6 +26,7 @@ steps:
     vstsFeed: '2c3749dd-45ac-4bc0-b897-9e4d58e3a6fa'
 
 - task: DotNetCoreCLI@2
+  displayName: Build app
   inputs:
     command: 'publish'
     publishWebProjects: false
@@ -43,8 +45,6 @@ steps:
   workingDirectory: $(Build.SourcesDirectory)
   displayName: Git Tag
  
-- script: echo '$(Build.BuildNumber)'
-
 - task: GitHubRelease@1
   inputs:
     gitHubConnection: 'ReleasiServiceConnection_chechoXR'
@@ -58,3 +58,10 @@ steps:
     releaseNotesInline: 'Release of PrecannonWarn app'
     assets: '$(Build.ArtifactStagingDirectory)/app/*.zip'
     addChangeLog: false
+
+- task: PowerShell@2
+  displayName: Add version badge Readme.me
+  inputs:
+    targetType: 'inline'
+    script: 'echo [![Version - $(Build.BuildNumber)](https://img.shields.io/badge/Version-$(Build.BuildNumber)-2ea44f)] >> README.md'
+    workingDirectory: '$(System.DefaultWorkingDirectory	)'
