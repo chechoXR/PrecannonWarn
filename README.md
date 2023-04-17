@@ -35,6 +35,6 @@ This is a simple tool to warn about a precannon wave is arriving to line on Leag
  
 ## Badges  
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  
- 
+[![Build Status](https://dev.azure.com/sergioestebanramirez/PrecannonWarn/_apis/build/status%2FchechoXR.PrecannonWarn?branchName=main)](https://dev.azure.com/sergioestebanramirez/PrecannonWarn/_build/latest?definitionId=1&branchName=main) 
  
 
