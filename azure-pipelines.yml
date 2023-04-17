@@ -2,10 +2,18 @@
 trigger:
 - main
 
+variables:
+  - group: CI_Var
+  - name: releaseNumber
+    value: $(major).$(minor).$(Rev:r)
+
 pool:
   vmImage: windows-latest
 
 steps:
+- checkout: self
+  persistCredentials: true
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
@@ -26,13 +34,19 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
+- script: |
+     git tag $(releaseNumber)
+     git push origin $(releaseNumber)
+  workingDirectory: $(Build.SourcesDirectory)
+  displayName: Git Tag
+
 - task: GitHubRelease@1
   inputs:
     gitHubConnection: 'ReleasiServiceConnection_chechoXR'
     repositoryName: 'chechoXR/PrecannonWarn'
     action: 'create'
     target: '$(Build.SourceVersion)'
-    tagSource: 'gitTag'
-    tagPattern: '$(Build.SourceVersion)'
+    tagSource: 'userSpecifiedTag'
+    tag: '$(releaseNumber)'
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
