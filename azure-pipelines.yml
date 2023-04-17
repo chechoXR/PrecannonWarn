@@ -38,8 +38,8 @@ steps:
     publishLocation: 'Container'
 
 - script: |
-     git tag $(releaseNumber)
-     git push origin $(releaseNumber)
+     git tag $(Build.BuildNumber)
+     git push origin $(Build.BuildNumber)
   workingDirectory: $(Build.SourcesDirectory)
   displayName: Git Tag
  
