@@ -58,10 +58,3 @@ steps:
     releaseNotesInline: 'Release of PrecannonWarn app'
     assets: '$(Build.ArtifactStagingDirectory)/app/*.zip'
     addChangeLog: false
-
-- task: PowerShell@2
-  displayName: Add version badge Readme.me
-  inputs:
-    targetType: 'inline'
-    script: 'echo [![Version - $(Build.BuildNumber)](https://img.shields.io/badge/Version-$(Build.BuildNumber)-2ea44f)] >> README.md'
-    workingDirectory: '$(System.DefaultWorkingDirectory	)'
