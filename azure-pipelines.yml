@@ -54,5 +54,7 @@ steps:
     tagSource: 'userSpecifiedTag'
     tag: '$(Build.BuildNumber)'
     title: 'PrecannonWarn $(Build.BuildNumber)'
+    releaseNotesSource: 'inline'
+    releaseNotesInline: 'Release of PrecannonWarn app'
     assets: '$(Build.ArtifactStagingDirectory)/app/*.zip'
     addChangeLog: false
