@@ -50,8 +50,8 @@ steps:
     gitHubConnection: 'ReleasiServiceConnection_chechoXR'
     repositoryName: 'chechoXR/PrecannonWarn'
     action: 'create'
-    target: $(Build.BuildNumber)
+    target: '$(Build.BuildNumber)'
     tagSource: 'userSpecifiedTag'
-    tag: $(Build.BuildNumber)
-    changeLogCompareToRelease: 'lastFullRelease'
-    changeLogType: 'commitBased'
+    tag: '$(Build.BuildNumber)'
+    title: 'PrecannonWarn $(Build.BuildNumber)'
+    addChangeLog: false
