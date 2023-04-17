@@ -31,7 +31,7 @@ steps:
     gitHubConnection: 'ReleasiServiceConnection_chechoXR'
     repositoryName: 'chechoXR/PrecannonWarn'
     action: 'create'
-    target: '$(Build.SourceVersion)'
+    target: '$(myCommitSHA)'
     tagSource: 'gitTag'
     tagPattern: '$(Build.SourceVersion)'
     changeLogCompareToRelease: 'lastFullRelease'
