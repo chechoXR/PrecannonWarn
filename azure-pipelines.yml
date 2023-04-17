@@ -39,6 +39,8 @@ steps:
      git push origin $(releaseNumber)
   workingDirectory: $(Build.SourcesDirectory)
   displayName: Git Tag
+ 
+- script: echo '$(Build.BuildNumber)'
 
 - task: GitHubRelease@1
   inputs:
